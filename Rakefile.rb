@@ -28,8 +28,15 @@ task :pdf do
     safe: :unsafe,
     backend: 'pdf',
     to_dir: BUILD_DIR,
+    attributes: {
+      'pdf-stylesdir' => 'theme/pdf',
+      # 'pdf-themesdir' => 'theme',
+      'pdf-style' => 'book',
+      'pdf-fontsdir' => 'theme/fonts'
+    },
     mkdirs: true
 end
+
 
 # TIP invoke using epub[ebook-validate] to validate
 desc 'Build the EPUB3 format'
